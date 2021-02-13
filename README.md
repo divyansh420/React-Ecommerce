@@ -9,7 +9,7 @@ This is just for reference you can make your own design with all these features.
 
 ### When the app starts (Home Screen)
 
-<img src="HomeScreen.png" alt="home-preview" width="800" height="650">
+<img src="Home.png" alt="home-preview" width="800" height="650">
 
 ### Displays all the proudcts like this
 
