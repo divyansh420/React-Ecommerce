@@ -9,23 +9,19 @@ This is just for reference you can make your own design with all these features.
 
 ### When the app starts (Home Screen)
 
-<img src="Home.png" alt="home-preview" width="800" height="650">
+<img src="HomePage.png" alt="home-preview" width=auto height=auto>
 
-### Displays all the proudcts like this
+### Preview of a product
 
-<img src="listproduct.png" alt="main-preview" width="800" height="550">
-
-### Products which belong to New
-
-<img src="NewProduct.png" alt="new-preview" width="800" height="550">
+<img src="ProductDetails.png" alt="home-preview" width=auto height=auto>
 
 ### Cart Screen
 
-<img src="cart.png" alt="cart-preview" width="800" height="500">
+<img src="cart.png" alt="cart-preview" width=auto height=auto>
 
 ### Billing Form When an user wants to buy a product
 
-<img src="forms.png" alt="form-preview" width="800" height="650">
+<img src="CheckForm.png" alt="form-preview" width=auto height=auto>
 
 The following pages have more details. Please read through the entire document for all the details.
 
