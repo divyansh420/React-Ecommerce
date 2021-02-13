@@ -9,23 +9,23 @@ This is just for reference you can make your own design with all these features.
 
 ### When the app starts (Home Screen)
 
-<img src="HomeScreen.png" alt="home-preview" width="700" height="650">
+<img src="HomeScreen.png" alt="home-preview" width="800" height="650">
 
 ### Displays all the proudcts like this
 
-<img src="listproduct.png" alt="main-preview" width="700" height="650">
+<img src="listproduct.png" alt="main-preview" width="800" height="550">
 
 ### Products which belong to New
 
-<img src="NewProduct.png" alt="new-preview" width="700" height="650">
+<img src="NewProduct.png" alt="new-preview" width="800" height="550">
 
 ### Cart Screen
 
-<img src="cart.png" alt="cart-preview" width="700" height="500">
+<img src="cart.png" alt="cart-preview" width="800" height="500">
 
 ### Billing Form When an user wants to buy a product
 
-<img src="forms.png" alt="form-preview" width="700" height="650">
+<img src="forms.png" alt="form-preview" width="800" height="650">
 
 The following pages have more details. Please read through the entire document for all the details.
 
@@ -56,7 +56,7 @@ The following pages have more details. Please read through the entire document f
    10. **sellerName**: Name of the seller(string)
    11. **isNewProduct**:type of the product(boolean)
        `You must have to use all the elements provided in the json in your user-interface.`
-6. The user should have the following features
+6. It should have the following features
 
    1. When the app starts, the app loads the list of the products and displays the product with specified data.
    2. There can be number of navigations in the header/drawer. eg: **Home** , **My Favorites**,**My Cart** , **My Account**,etc.
