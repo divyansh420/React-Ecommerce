@@ -51,7 +51,7 @@ The following pages have more details. Please read through the entire document f
    9. **imageURL**: image of a product
    10. **sellerName**: Name of the seller(string)
    11. **isNewProduct**:type of the product(boolean)
-       `You must have to use all the elements provided in the json in your user-interface.`
+       `You should use all the elements provided in the json in your user-interface.`
 6. It should have the following features
 
    1. When the app starts, the app loads the list of the products and displays the product with specified data.
@@ -67,14 +67,14 @@ The following pages have more details. Please read through the entire document f
    11. User can flag a product as a favorite.
    12. User can able to see his/her favorites product inside the **My Favorites section**.
 
-7. **fork** current problem repository. and make your forked repository **private**.
-8. Add `@bhar4t`, `@divich` and `@import-yuv` as collaborator while intializing repository in github. and follow the given timeline instructions from your mail.
+7. **Fork** current problem repository. and make your forked repository **private**.
+8. Add `@divyansh420` as collaborator while intializing repository in github. and follow the given timeline instructions from your mail.
 
 <hr>
 
 ### Coding Guidelines
 
-- You will be evaluated on
+- You will be evaluated on the **Working Prototype** of the app with the following:
   - UI & design
   - Modularity of Code
   - Data Structures used
