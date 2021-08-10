@@ -1,0 +1,30 @@
+main {
+    margin: 1rem;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    
+    padding: 0 1rem;
+    background: lightskyblue;
+    color: black;
+    font-family: Helvetica;
+    font-weight: 300;
+}
+
+.navbar__title {
+    margin-right: 1.5rem;
+    padding: 0.8rem 1rem;
+    transform: scale(1.4);
+}
+
+.navbar__item {
+    padding: 1rem;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.navbar__right {
+    margin-left: auto;
+}
