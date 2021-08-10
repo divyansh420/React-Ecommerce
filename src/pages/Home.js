@@ -4,12 +4,11 @@ import data from '../product_lists.json';
 import '../css/landing.css';
 import Portal from '../components/Modal';
 
-const Landing = () => {
-
+const Home = () => {
 	return (
 		<Flex wrap="wrap" mx={16}>
 			{data.map((item) => {
-				const isDiscounted = item.discount.endsWith('%')
+				const isDiscounted = item.discount.endsWith('%');
 				const discount = isDiscounted ? Number(item.discount.split('%')[0]) : 0;
 				return (
 					<>
@@ -49,10 +48,10 @@ const Landing = () => {
 							<Portal item={item} />
 						</Flex>
 					</>
-				)}
-			)}
+				);
+			})}
 		</Flex>
 	);
 };
 
-export default Landing;
+export default Home;

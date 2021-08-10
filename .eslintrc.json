@@ -4,7 +4,6 @@
 		"es2021": true
 	},
 	"extends": [
-		"eslint/recommended",
 		"airbnb",
 		"plugin:jest/recommended",
 		"plugin:prettier/recommended",
@@ -18,7 +17,7 @@
 		"ecmaVersion": 12,
 		"sourceType": "module"
 	},
-	"plugins": ["react-hooks", "jsx-a11y", "prettier", "import", "react"],
+	"plugins": ["react-hooks", "jsx-a11y", "prettier", "import"],
 	"rules": {
 		"react/jsx-uses-react": "off",
 		"react/react-in-jsx-scope": "off",
@@ -35,7 +34,7 @@
 				"extensions": [".js", ".jsx"]
 			}
 		],
-		"no-unused-vars": "warn",
+		"no-unused-vars": "error",
 		"prettier/prettier": [
 			"error",
 			{
@@ -44,19 +43,16 @@
 				"tab": 4
 			}
 		],
-		"rules": {
-			"comma-dangle": ["error", "never"]
-		}
-		// "comma-dangle": [
-		// 	"error",
-		// 	{
-		// 		"arrays": "always-multiline",
-		// 		"objects": "always-multiline",
-		// 		"imports": "always-multiline",
-		// 		"exports": "never",
-		// 		"functions": "never"
-		// 	}
-		// ]
+		"comma-dangle": [
+			"error",
+			{
+				"arrays": "always-multiline",
+				"objects": "always-multiline",
+				"imports": "always-multiline",
+				"exports": "never",
+				"functions": "never"
+			}
+		]
 	},
 	"settings": {
 		"import/resolver": {
