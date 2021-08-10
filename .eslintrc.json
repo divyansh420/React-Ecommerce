@@ -4,6 +4,7 @@
 		"es2021": true
 	},
 	"extends": [
+		"eslint/recommended",
 		"airbnb",
 		"plugin:jest/recommended",
 		"plugin:prettier/recommended",
@@ -34,7 +35,7 @@
 				"extensions": [".js", ".jsx"]
 			}
 		],
-		"no-unused-vars": "error",
+		"no-unused-vars": "warn",
 		"prettier/prettier": [
 			"error",
 			{
@@ -43,16 +44,19 @@
 				"tab": 4
 			}
 		],
-		"comma-dangle": [
-			"error",
-			{
-				"arrays": "always-multiline",
-				"objects": "always-multiline",
-				"imports": "never",
-				"exports": "never",
-				"functions": "never"
-			}
-		]
+		"rules": {
+			"comma-dangle": ["error", "never"]
+		}
+		// "comma-dangle": [
+		// 	"error",
+		// 	{
+		// 		"arrays": "always-multiline",
+		// 		"objects": "always-multiline",
+		// 		"imports": "always-multiline",
+		// 		"exports": "never",
+		// 		"functions": "never"
+		// 	}
+		// ]
 	},
 	"settings": {
 		"import/resolver": {
