@@ -10,7 +10,7 @@ const Cart = () => {
 				Shopping Cart Summary
 			</Text>
 		</>
-	)
-}
+	);
+};
 
 export default Cart;

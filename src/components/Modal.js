@@ -2,7 +2,6 @@ import {
 	Modal,
 	ModalOverlay,
 	ModalContent,
-	ModalHeader,
 	ModalBody,
 	ModalCloseButton,
 	useDisclosure,
@@ -16,11 +15,12 @@ import {
 	NumberInputStepper,
 	NumberIncrementStepper,
 	NumberDecrementStepper,
+	// eslint-disable-next-line comma-dangle
 	Button,
 } from '@chakra-ui/react';
 import { BiFullscreen } from 'react-icons/bi';
 
-const Portal = ({item}) => {
+const Portal = ({ item }) => {
 	const { isOpen, onOpen, onClose } = useDisclosure();
 	return (
 		<>
@@ -55,12 +55,18 @@ const Portal = ({item}) => {
 								<Image src={item.imageURL} alt={item.name} width="100%" height="100%" />
 							</Box>
 							<Box p="6">
-								<Text fontSize="sm" color="gray.500">{item.productId}</Text>
+								<Text fontSize="sm" color="gray.500">
+									{item.productId}
+								</Text>
 								<Text fontSize="2xl" mt={4} fontWeight="semibold">
 									{item.name}
 								</Text>
-								<Text fontSize="sm" mb={4}>{item.sellerName}</Text>
-								<Text fontSize="3xl" as="h1">₹{item.price}</Text>
+								<Text fontSize="sm" mb={4}>
+									{item.sellerName}
+								</Text>
+								<Text fontSize="3xl" as="h1">
+									₹{item.price}
+								</Text>
 								<NumberInput defaultValue={1} min={1} size="md" width={20} shadow="xl" my={8}>
 									<NumberInputField />
 									<NumberInputStepper>
@@ -68,7 +74,9 @@ const Portal = ({item}) => {
 										<NumberDecrementStepper />
 									</NumberInputStepper>
 								</NumberInput>
-								<Button bg="lightskyblue" mt={2}>Add To Cart</Button>
+								<Button bg="lightskyblue" mt={2}>
+									Add To Cart
+								</Button>
 							</Box>
 						</Flex>
 					</ModalBody>
