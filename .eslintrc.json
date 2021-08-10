@@ -1,0 +1,65 @@
+{
+	"env": {
+		"browser": true,
+		"es2021": true
+	},
+	"extends": [
+		"airbnb",
+		"plugin:jest/recommended",
+		"plugin:prettier/recommended",
+		"plugin:jsx-a11y/recommended",
+		"react-app"
+	],
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 12,
+		"sourceType": "module"
+	},
+	"plugins": ["react-hooks", "jsx-a11y", "prettier", "import", "react"],
+	"rules": {
+		"react/jsx-uses-react": "off",
+		"react/react-in-jsx-scope": "off",
+		"jest/valid-describe": "off",
+		"no-case-declarations": "warn",
+		"react-hooks/rules-of-hooks": "error",
+		"react-hooks/exhaustive-deps": "error",
+		"react/prop-types": "off",
+		"react/static-property-placement": "off",
+		"react/display-name": "off",
+		"react/jsx-filename-extension": [
+			"error",
+			{
+				"extensions": [".js", ".jsx"]
+			}
+		],
+		"no-unused-vars": "error",
+		"prettier/prettier": [
+			"error",
+			{
+				"singleQuote": true,
+				"semi": true,
+				"tab": 4
+			}
+		],
+		"comma-dangle": [
+			"error",
+			{
+				"arrays": "always-multiline",
+				"objects": "always-multiline",
+				"imports": "never",
+				"exports": "never",
+				"functions": "never"
+			}
+		]
+	},
+	"settings": {
+		"import/resolver": {
+			"node": {
+				"extensions": [".js", ".jsx", ".ts", ".tsx"],
+				"moduleDirectory": ["node_modules", "src/"]
+			}
+		}
+	}
+}
