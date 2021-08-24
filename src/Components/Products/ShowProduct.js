@@ -32,7 +32,9 @@ export default function ShowProduct() {
 
   const productDiscountedPrice = (price * Number(discount.split("%")[0])) / 100;
 
-  function handleAddToCart() {
+  function handleAddToCart(e) {
+    e.preventDefault();
+
     let price = product.discount ? productDiscountedPrice : product.price;
 
     const payload = {

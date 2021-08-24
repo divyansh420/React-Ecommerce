@@ -9,6 +9,7 @@ const initState = {
   items: [],
 
   orderData: [],
+  favItems: [],
 };
 
 export default function reducer(state = initState, { type, payload }) {
@@ -50,6 +51,13 @@ export default function reducer(state = initState, { type, payload }) {
         ...state,
         items: [],
         orderData: [{ data, userData: payload }],
+      };
+    }
+
+    case "make fav": {
+      return {
+        ...state,
+        favItems: [...state.favItems, payload],
       };
     }
 

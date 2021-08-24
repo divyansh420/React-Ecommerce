@@ -18,6 +18,5 @@ export default function Products() {
 const ProductsBox = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   padding: 20px 2rem;
 `;

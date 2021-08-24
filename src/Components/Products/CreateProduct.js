@@ -1,11 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRupeeSign } from "@fortawesome/free-solid-svg-icons";
+import { faRupeeSign, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 export default function CreateProduct({ product }) {
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const {
     name,
@@ -60,10 +62,23 @@ export default function CreateProduct({ product }) {
           </span>
           {productDiscountedPrice}
         </SaveMoney>
+
+        <FavButton
+          onClick={() => {
+            dispatch({ type: "make fav", payload: productId });
+          }}
+        >
+          <FontAwesomeIcon icon={faHeart} />
+        </FavButton>
       </section>
     </ProductContainer>
   );
 }
+
+const FavButton = styled.div`
+  margin-left: auto;
+  width: fit-content;
+`;
 
 const ProductContainer = styled.div`
   border: 2px solid #d4d4d4;
@@ -71,6 +86,7 @@ const ProductContainer = styled.div`
   font-family: Roboto, Arial, sans-serif;
 
   cursor: pointer;
+  margin: 20px;
 
   & > section {
     padding: 0 20px 10px;

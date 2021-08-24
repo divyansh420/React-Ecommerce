@@ -1,8 +1,9 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Home from "../Pages/Home";
-import ShowProduct from "./../Components/Products/ShowProduct";
+import ShowProduct from "./../Pages/Product";
 import Cart from "./../Pages/Cart";
+import Favroite from "./../Components/Favroite/Favroite";
 
 export default function Router() {
   return (
@@ -17,6 +18,10 @@ export default function Router() {
 
       <Route path="/cart">
         <Cart />
+      </Route>
+
+      <Route path="/favorites">
+        <Favroite />
       </Route>
     </Switch>
   );
