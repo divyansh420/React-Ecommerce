@@ -1,15 +1,17 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import products from "./../../utils/product_lists.json";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRupeeSign } from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from "react-router-dom";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch } from "react-redux";
+import { addItemInCart } from "./../../store/actions";
 
 export default function ShowProduct() {
   const { productId } = useParams();
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const product = products.find((product) => product.productId === productId);
 
@@ -30,10 +32,26 @@ export default function ShowProduct() {
 
   const productDiscountedPrice = (price * Number(discount.split("%")[0])) / 100;
 
-  async function handleAddToCart() {}
+  function handleAddToCart() {
+    let price = product.discount ? productDiscountedPrice : product.price;
+
+    const payload = {
+      ...product,
+      quantity: 1,
+      price,
+    };
+
+    dispatch(addItemInCart(payload));
+    history.push("/cart");
+  }
 
   return (
     <ProductContainer>
+      <nav>
+        <Link to="/">Home</Link> <span>{">"}</span> <Link to="/">Products</Link>{" "}
+        <span>{">"}</span> <span>{name}</span>
+      </nav>
+
       <Main>
         <PrimaryImage>
           <PrimeImage src={imageURL} />
@@ -42,7 +60,12 @@ export default function ShowProduct() {
         <SectionB>
           <Name>{name}</Name>
 
-          <Ratting>{rating} &#9733;</Ratting>
+          <Box>
+            <Ratting>{rating} &#9733;</Ratting>
+            {companyAssured && <Assured>Assured</Assured>}
+
+            {isNewProduct && <NewProduct>New</NewProduct>}
+          </Box>
 
           <Save>
             <p>
@@ -52,14 +75,32 @@ export default function ShowProduct() {
           </Save>
 
           <Price>
-            <span>&#8377;{productDiscountedPrice}</span>
-            <span>&#8377;{price}</span> <span>{discount} off</span>
+            <span>&#8377;{discount ? productDiscountedPrice : price}</span>
+            {discount && (
+              <>
+                <span>&#8377;{price}</span> <span>{discount} off</span>
+              </>
+            )}
           </Price>
 
           <AddToCart onClick={handleAddToCart}>
             <span>{<FontAwesomeIcon icon={faShoppingCart} />}</span>
             ADD TO CART
           </AddToCart>
+
+          <Specifications>
+            <h3>Specifications</h3>
+
+            <ul>
+              <li>
+                <span>Brand</span> <span>{brandName}</span>
+              </li>
+
+              <li>
+                <span>Seller</span> <span>{sellerName}</span>
+              </li>
+            </ul>
+          </Specifications>
         </SectionB>
       </Main>
     </ProductContainer>
@@ -78,6 +119,15 @@ const ProductContainer = styled(Flex)`
   align-items: flex-start;
   font-family: Roboto, Arial, sans-serif;
   padding: 0 20px;
+
+  nav {
+    margin-top: 2rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
 `;
 
 const Main = styled.main`
@@ -87,7 +137,9 @@ const Main = styled.main`
   margin: auto;
 `;
 
-const SectionB = styled.section``;
+const SectionB = styled.section`
+  flex-basis: 55%;
+`;
 
 const Ratting = styled.button`
   color: #fff;
@@ -102,14 +154,23 @@ const Ratting = styled.button`
   }
 `;
 
+const Assured = styled(Ratting)`
+  margin-left: 3rem;
+`;
+
+const NewProduct = styled(Assured)``;
+
 const PrimeImage = styled.img`
-  width: 80%;
+  width: 100%;
   object-fit: contain;
 `;
 
 const PrimaryImage = styled.section`
-  flex-basis: 30%;
+  flex-basis: 40%;
   margin-top: 20px;
+  /* border: 1px solid blue; */
+  display: flex;
+  align-items: center;
 `;
 
 const Name = styled.p`
@@ -163,4 +224,25 @@ const Button = styled.button`
 const AddToCart = styled(Button)`
   margin-right: 20px;
   background: #e94560;
+`;
+
+const Box = styled.div``;
+
+const Specifications = styled.div`
+  margin-top: 4rem;
+  h3 {
+    color: #353535;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    display: flex;
+    /* border: 1px solid red; */
+    justify-content: space-between;
+    width: 50%;
+    margin: 10px 0;
+  }
 `;
