@@ -7,6 +7,8 @@ import {
 
 const initState = {
   items: [],
+
+  orderData: [],
 };
 
 export default function reducer(state = initState, { type, payload }) {
@@ -39,6 +41,16 @@ export default function reducer(state = initState, { type, payload }) {
       );
 
       return { ...state, items: arr };
+    }
+
+    case "Order Placed": {
+      const data = [...state.items];
+
+      return {
+        ...state,
+        items: [],
+        orderData: [{ data, userData: payload }],
+      };
     }
 
     default:

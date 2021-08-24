@@ -1,18 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import styled from "styled-components";
+import PlaceOrderModal from "../Order/PlaceOrderModal";
 import CreateProductInCart from "./CreateProductInCart";
 
 export default function Cart() {
+  const history = useHistory();
   const { items } = useSelector((state) => state);
+
+  const [isModalVisible, setModalVisible] = useState(false);
 
   const totalCost = items.reduce(
     (acc, item) => acc + item.price * item.quantity,
     0
   );
 
-  console.log({ items, totalCost });
+  const handlePlaceOrderButton = () => {
+    setModalVisible(true);
+    // history.push("/orders");
+  };
 
   return (
     <CartBox>
@@ -42,8 +49,16 @@ export default function Cart() {
             </span>
           </p>
           <hr />
+
+          <OrderButton>
+            <button onClick={handlePlaceOrderButton}>Place Order</button>
+          </OrderButton>
         </BalanceSection>
       </Main>
+
+      {isModalVisible && (
+        <PlaceOrderModal setIsModalVisible={setModalVisible} />
+      )}
     </CartBox>
   );
 }
@@ -87,5 +102,31 @@ const BalanceSection = styled.section`
     justify-content: space-between;
     font-size: 20px;
     margin: 30px 0;
+  }
+`;
+
+const OrderButton = styled.div`
+  width: 58.9%;
+  background-color: #fff;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  left: 30px;
+  text-align: right;
+  box-shadow: 1px -1px 6px #c3c3c3;
+
+  button {
+    margin-right: 20px;
+    border: none;
+    outline: none;
+    background: #db6400;
+    padding: 15px 40px;
+    font-size: 25px;
+    border-radius: 3px;
+    color: #fff;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 `;
