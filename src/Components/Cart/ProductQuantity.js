@@ -2,16 +2,19 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { increaseQuantity, decreaseQuantity } from "./../../store/actions";
 
 function ProductQuantity({ product }) {
   const dispatch = useDispatch();
 
-  const [changeColor, setChangeColor] = useState("");
+  const handleIncreaseQuantity = () => {
+    dispatch(increaseQuantity(product.productId));
+  };
 
-  const handleIncreaseQuantity = async () => {};
-
-  const handleDecreaseQuantity = async () => {};
+  const handleDecreaseQuantity = () => {
+    dispatch(decreaseQuantity(product.productId));
+  };
 
   return (
     <>

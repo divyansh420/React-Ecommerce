@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import ProductQuantity from "./ProductQuantity";
+import { removeItemFromCart } from "./../../store/actions";
 
 function CreateProductInCart({ product }) {
   const dispatch = useDispatch();
+
   const {
     name,
     brandName,
@@ -17,19 +19,18 @@ function CreateProductInCart({ product }) {
     sellerName,
     isNewProduct,
     quantity,
+    productId,
   } = product;
 
-  // const convertPrice = (price: string) => {
-  //   return Math.ceil(Number(price) * 75);
-  // };
-
-  const handleRemoveClick = async () => {};
+  const handleRemoveClick = () => {
+    dispatch(removeItemFromCart(productId));
+  };
 
   return (
     <ProductCart>
-      <div>
+      <ImgBox>
         <ProductImg src={imageURL} />
-      </div>
+      </ImgBox>
 
       <ProductDetails>
         <div>
@@ -51,52 +52,43 @@ function CreateProductInCart({ product }) {
 
 const ProductCart = styled.div`
   display: flex;
-  flex-direction: row;
-  margin: 3em 0;
+  margin-bottom: 2rem;
+`;
 
-  &:first-of-type {
-    margin: 20px 0;
-  }
-
-  &:nth-last-child(2) {
-    margin-bottom: 5em;
-  }
+const ImgBox = styled.div`
+  width: 200px;
+  height: 200px;
 `;
 
 const ProductImg = styled.img`
-  border-radius: 3px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 `;
 
 const ProductDetails = styled.div`
-  width: 100%;
-  margin: 0 20px;
-  padding-left: 30px;
+  width: fit-content;
+  margin-left: 30px;
 
   p:first-child {
-    margin: 3px 0 10px 0;
+    margin: 0;
   }
 
   p:nth-child(2) {
-    font-size: 16px;
+    margin: 5px 0;
     color: gray;
+
     span:first-child {
       margin-right: 2em;
     }
   }
 
-  p:nth-child(3) {
-    margin: 10px 0;
-  }
-
   & > div {
-    display: flex;
-    font-size: 23px;
-    justify-content: space-between;
-    align-items: center;
+    font-size: 18px;
 
     p:nth-child(2) {
       color: black;
-      font-size: 23px;
+      font-size: 20px;
     }
   }
 
@@ -109,8 +101,7 @@ const Remove = styled.button`
   font-size: 20px;
   border: none;
   outline: none;
-  padding: 5px 20px 5px 0;
-  margin-top: 3em;
+  margin-top: 1em;
   background: none;
 
   &:hover {

@@ -59,16 +59,20 @@ const Nav = styled.nav`
   }
 `;
 
-const Main = styled.main``;
+const Main = styled.main`
+  display: flex;
+  align-items: flex-start;
+  padding-top: 2rem;
+
+  & > section:first-child {
+    flex-basis: 60%;
+  }
+`;
 
 const BalanceSection = styled.section`
-  position: fixed;
-  right: 9%;
   margin-left: 1em;
   width: 350px;
-  background-color: #fff;
   padding: 20px;
-  height: fit-content;
   border: 1px solid #e5e2e2;
   border-radius: 2px;
 
