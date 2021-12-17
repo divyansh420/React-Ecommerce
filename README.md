@@ -4,8 +4,8 @@
 
 ### Ecommerce Web-app
 
-The goal of this assignment is to build a prototype Ecommerce website.
-This is just for reference you can make your own design with all these features.
+The goal of this assignment is to build a prototype Ecommerce website(React.js) / App(React Native).
+This is just for reference you can make your own design with all these features. 
 
 ### When the app starts (Home Screen)
 
@@ -29,7 +29,7 @@ The following pages have more details. Please read through the entire document f
 
 ### Features
 
-1. It is just like an ecommerce website.
+1. It is just like an ecommerce website/app.
 2. We assume the following modules to be present
    1. Navigation
    2. Home Page
@@ -69,6 +69,8 @@ The following pages have more details. Please read through the entire document f
 
 7. **Fork** current problem repository. and make your forked repository **private**.
 8. Add `@divyansh420` as collaborator while intializing repository in github. and follow the given timeline instructions from your mail.
+9. Brownie points to deployed webapps(If you can, but not mandatory).
+10. **React** Native candidates **MUST** submit the debug apk. 
 
 <hr>
 
