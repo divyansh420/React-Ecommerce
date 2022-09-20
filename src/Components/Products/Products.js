@@ -23,7 +23,7 @@ const Products = () => {
             <div className="row">
                 <div id="products" className='container'>
                     <div className="row">
-                        <h1 className='text-primary text-center mt-5 mb-4 heading'> Our <span>Products</span></h1>
+                        {/* <h1 className='text-primary text-center mt-5 mb-4 heading'> Our <span>Products</span></h1> */}
                         <div className="products-container ">
 
                             {
