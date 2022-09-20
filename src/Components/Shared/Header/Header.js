@@ -11,10 +11,10 @@ const Header = () => {
             </div>
             <div className="col-md-6">
                 <Link to="/">Home</Link>
-                <Link to="/review">Shop</Link>
-                <Link to="/dashboard">Favourite</Link>
-                <Link to="/blogs">Order</Link>
-                <Link to="/about">Contact</Link>
+                <Link to="/shop">Shop</Link>
+
+                <Link to="/order">Order</Link>
+                <Link to="/contact">Contact</Link>
             </div>
             <div className="col-md-2">
                 <h4>Profile</h4>
