@@ -16,7 +16,7 @@ function ProductDetails() {
   function handleAddToCart() {
     setAddToCart([...addToCart, data[0].productId]);
   }
-  console.log(addToCart);
+
   return (
     <div className=" p-20 flex flex-col gap-10 w-full ">
       {data?.map((items) => (
