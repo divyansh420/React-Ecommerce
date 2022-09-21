@@ -7,7 +7,7 @@ export const ManageState = () => {
 };
 
 export function StateManager({ children }) {
-  const [addToCart, setAddToCart] = useState();
+  const [addToCart, setAddToCart] = useState([]);
   return (
     <State.Provider value={{ addToCart, setAddToCart }}>
       {children}

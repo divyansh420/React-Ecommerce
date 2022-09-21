@@ -14,7 +14,7 @@ function ProductDetails() {
   }, []);
   console.log(data);
   function handleAddToCart() {
-    setAddToCart(data[0].productId);
+    setAddToCart([...addToCart, data[0].productId]);
   }
   console.log(addToCart);
   return (
