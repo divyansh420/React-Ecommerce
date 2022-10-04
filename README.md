@@ -2,7 +2,7 @@
 
 <hr>
 
-### Ecommerce Web-app 
+### Ecommerce Web-app 🛍️
 
 The goal of this assignment is to build a prototype Ecommerce website(React.js)💻 / App(React Native)📱.
 This is just for the reference, but we encourage you to make your own designs. 
